@@ -8,7 +8,7 @@
      display: flex; 
      justify-content: center;
      align-items: center; margin-right: 10px;" 
-     width=500 
+     width=350 
 />
 
 <img src="https://i.imgur.com/MWvB05M.png"
@@ -17,7 +17,7 @@
      display: flex; 
      justify-content: center;
      align-items: center; margin-right: 10px;" 
-     width=500 
+     width=350 
 />
 
 <img src="https://i.imgur.com/TUqC8h6.png"
@@ -26,7 +26,7 @@
      display: flex; 
      justify-content: center;
      align-items: center; margin-right: 10px;" 
-     width=500 
+     width=350 
 />
 
 <img src="https://i.imgur.com/V2b9tn8.png"
@@ -35,7 +35,7 @@
      display: flex; 
      justify-content: center;
      align-items: center; margin-right: 10px;" 
-     width=500 
+     width=350 
 />
 <div>
     <h2>trello:</h2>
