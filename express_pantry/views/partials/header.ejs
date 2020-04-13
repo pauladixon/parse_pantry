@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
+  <title>pantry parser</title>
+  <!-- Google Icon Fonts used by Materialize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/style.css" />
 </head>
+
 <body>
-  <nav>
-    <a href="/recipes" <%- title === 'recipes' ? 'class="active"' : '' %>>recipes</a>
-    <a href="/" <%- title === 'home' ? 'class="active"' : '' %>>home</a>
-  </nav>
+  <div>
+    <nav>
+      <div>
+        <a href="" class="title">pantry parser</a>
+        <ul class="right">
+            <li> <a href="/recipes"><i class="material-icons left">trending_flat</i>all recipes</a>
+          <li>
+          <% if (user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i>log out</a>
+          <% } else { %>
+            <a href="/auth/google"><i class="material-icons left">vpn_key</i>login with google</a>
+          <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <main>
-    <h1><%= title %></h1>

@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+
+  <ul>
+    <% items.forEach(function(i, idx) { %>
+      <li>
+        <form action="/items/<%= idx %>?_method=DELETE"
+          id="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <a href="/items/<%= idx %>"><%= i.item %></a>
+          - 
+        <%= i.done ? 'done' : 'not done' %>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/items/new">add new items</a>
+
+  
+<%- include('../partials/footer') %>
