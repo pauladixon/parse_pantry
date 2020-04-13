@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
 
-
-  <ul>
+  <ul class="lists" class ="pantry">
     <% items.forEach(function(i, idx) { %>
       <li>
         <form action="/items/<%= idx %>?_method=DELETE"
@@ -9,12 +8,15 @@
           <button type="submit">X</button>
         </form>
         <a href="/items/<%= idx %>"><%= i.item %></a>
-          - 
-        <%= i.done ? 'done' : 'not done' %>
       </li>
     <% }); %>
+    <li>
+      <form action="/items" method="POST" autocomplete="off">
+        <input type="text" name="item">
+        <button type="submit">add new item</button>
+      </form>
+    </li>
   </ul>
-  <a href="/items/new">add new items</a>
 
   
 <%- include('../partials/footer') %>

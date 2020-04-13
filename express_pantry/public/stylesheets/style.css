@@ -4,8 +4,11 @@
 }
 
 body {
-  margin: 0;
   background-image: linear-gradient(to right, #C2C6C6, #FEE8E5);
+  margin: 0;
+}
+
+body > main{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,4 +35,8 @@ a {
 
 li {
   list-style: none;
+}
+
+.lists {
+  display: grid;
 }

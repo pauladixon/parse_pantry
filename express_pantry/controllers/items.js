@@ -5,10 +5,48 @@ module.exports = {
   show,
   new: newItem,
   create,
-  delete: deleteItem,
+  // delete: deleteItem,
   edit,
   update
 };
+
+function index(req, res) {
+  Item.find({}, (err, items) => {
+    res.render('items/index', {
+      items,
+      time: req.time,
+      user: req.user
+    })
+  });
+}
+
+function show(req, res) {
+  Item.findById(req.params.id, (err, item) => {
+    res.render('items/show', {
+      item,
+      user: req.user
+    })
+})
+}
+
+function newItem(req, res) {
+  newItem = new Item()
+  res.render('items', {
+    time: req.time,
+    user: req.user
+  });
+}
+
+function create(req, res) {
+  for (let key in req.body) {
+    if (req.body[key] === '') delete req.body[key]
+  }
+  const item = new Item(req.body)
+  item.save(function(err) {
+    if (err) return res.redirect('/items')
+    res.redirect('/items')
+  })
+}
 
 function update(req, res) {
   req.body.done = req.body.done === 'on';
@@ -19,44 +57,12 @@ function update(req, res) {
 function edit(req, res) {
   res.render('items/edit', {
     item: Item.getOne(req.params.id),
-    idx: req.params.id
-  });
-}
-
-function deleteItem(req, res) {
-  Item.deleteOne(req.params.id);
-  res.redirect('/items');
-}
-
-function create(req, res) {
-  console.log(req.body);
-  req.body.done = false;
-  Item.create(req.body);
-  res.redirect('/items', {
-    time: req.time,
+    idx: req.params.id,
     user: req.user
   });
 }
 
-function newItem(req, res) {
-  res.render('items/new', {
-    time: req.time,
-    user: req.user
-  });
-}
-
-function index(req, res) {
-  console.log("in index")
-  res.render('items/index', {
-    items: Item.getAll(),
-    time: req.time,
-    user: req.user
-  });
-}
-
-function show(req, res) {
-  res.render('items/show', {
-    item: Item.getOne(req.params.id),
-    itemNum: parseInt(req.params.id) + 1
-  });
-}
+// function deleteItem(req, res) {
+//   Item.deleteOne(req.params.id);
+//   res.redirect('/items');
+// }

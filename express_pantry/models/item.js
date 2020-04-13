@@ -1,33 +1,19 @@
-const items = [
-  {item: 'greek yogurt'},
-  {item: 'chicken stock'},
-  {item: 'brussel sprouts'}
-];
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-module.exports = {
-  getAll,
-  getOne,
-  create,
-  deleteOne,
-  update
-};
+const itemSchema = new Schema({
+  item: {
+    type: String,
+    require: true
+  },
+  purchased: {
+    type: String
+  },
+  expires: {
+    type: String
+  }
+}, {
+  timestamps: true
+})
 
-function update(id, item) {
-  items.splice(id, 1, item);
-}
-
-function deleteOne(id) {
-  items.splice(id, 1);
-}
-
-function create(item) {
-  items.push(item);
-}
-
-function getOne(id) {
-  return items[id];
-}
-
-function getAll() {
-  return items;
-}
+module.exports = mongoose.model('Item', itemSchema)
