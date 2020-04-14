@@ -122,13 +122,14 @@ table td {
 }
 
 
-#show-page {
+.show-page {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
+  background-color: gray;
 }
 
-#show-page div:nth-child(even) {
+.show-page div:nth-child(even) {
   font-weight: bold;
 }
 
