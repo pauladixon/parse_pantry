@@ -5,13 +5,6 @@ var indexCtrl = require('../controllers/index');
 
 router.get('/', indexCtrl.index);
 
-// router.get('/', function(req, res) {
-//   res.render('index', {
-//     items: {},
-//     user: req.user,
-//     title: 'parse pantry' 
-//   });
-// });
 
  // Google OAuth login route
  router.get('/auth/google', passport.authenticate(
@@ -23,15 +16,15 @@ router.get('/', indexCtrl.index);
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/items',
-    failureRedirect : '/items'
+    successRedirect : '/',
+    failureRedirect : '/'
   }
 ));
 
  // OAuth logout route
  router.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/items');
+  res.redirect('/');
 });
 
 module.exports = router;

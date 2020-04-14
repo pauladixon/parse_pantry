@@ -1,7 +1,6 @@
 var Grocery = require('../models/grocery');
 
 module.exports = {
-  // index,
   show,
   new: newGrocery,
   create,
@@ -9,16 +8,6 @@ module.exports = {
   edit,
   update
 };
-
-// function index(req, res) {
-//   Grocery.find({}, (err, groceries) => {
-//     res.render('index', {
-//       groceries,
-//       time: req.time,
-//       user: req.user
-//     })
-//   });
-// }
 
 function show(req, res) {
     Grocery.findById(req.params.id, (err, grocery) => {

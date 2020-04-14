@@ -1,7 +1,6 @@
 var Item = require('../models/item');
 
 module.exports = {
-  // index,
   show,
   new: newItem,
   create,
@@ -9,16 +8,6 @@ module.exports = {
   edit,
   update
 };
-
-// function index(req, res) {
-//   Item.find({}, (err, items) => {
-//     res.render('index', {
-//       items,
-//       time: req.time,
-//       user: req.user
-//     })
-//   });
-// }
 
 function show(req, res) {
     Item.findById(req.params.id, (err, item) => {

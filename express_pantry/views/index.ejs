@@ -11,13 +11,13 @@
       </tr>
     </thead>
     <tbody>
-      <% items.forEach( (i) => { %>
+      <% items.forEach((i) => { %>
         <tr>
           <td><%= i.quantity %></td>
           <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
           <td><%= i.expires %></td>
           <td>
-            <form action="/items/<%= i._id %>?_method=DELETE"
+            <form action="../items/<%= i._id %>?_method=DELETE"
             id="delete-form" method="POST">
             <button type="submit">X</button></form>
           </td>
@@ -25,7 +25,7 @@
       <% }); %>
     </tbody>
   </table>
-  <form class="new-form" action="index" method="POST" autocomplete="off">
+  <form class="new-form" action="../items" method="POST" autocomplete="off">
     <label>item name
       <input type="text" name="item">
     </label><br>
@@ -51,13 +51,13 @@
       </tr>
     </thead>
     <tbody>
-      <% items.forEach( (i) => { %>
+      <% groceries.forEach((g) => { %>
         <tr>
           <td></td>
-          <td><%= i.quantity %></td>
-          <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
+          <td><%= g.quantity %></td>
+          <td><a href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
           <td>
-            <form action="/items/<%= i._id %>?_method=DELETE"
+            <form action="../groceries/<%= g._id %>?_method=DELETE"
             id="delete-form" method="POST">
             <button type="submit">X</button></form>
           </td>
@@ -66,9 +66,9 @@
     </tbody>
   </table>
 
-  <form class="new-form" action="index" method="POST" autocomplete="off">
+  <form class="new-form" action="../groceries" method="POST" autocomplete="off">
     <label>grocery
-      <input type="text" name="item">
+      <input type="text" name="grocery">
     </label><br>
     <label>quantity
       <input type="number" name="quantity">
@@ -113,7 +113,7 @@
   </table>
 
 
-  <form class="new-form" action="index" method="POST" autocomplete="off">
+  <form class="new-form" action="../items" method="POST" autocomplete="off">
     <input class="entry" type="submit" value="see all recipes">
     <input class="entry" type="submit" value="add new recipe">
   </form>
