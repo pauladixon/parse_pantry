@@ -3,11 +3,12 @@ const passport = require('passport')
 
 // The root route renders our only view
 router.get('/', function(req, res) {
-  res.redirect('/items');
+  res.render('items/index', { 
+    items: {},title: 'parse pantry' });
 });
 
  // Google OAuth login route
-router.get('/auth/google', passport.authenticate(
+ router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }
 ));

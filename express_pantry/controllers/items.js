@@ -5,7 +5,7 @@ module.exports = {
   show,
   new: newItem,
   create,
-  // delete: deleteItem,
+  delete: deleteItem,
   edit,
   update
 };
@@ -21,12 +21,12 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Item.findById(req.params.id, (err, item) => {
-    res.render('items/show', {
-      item,
-      user: req.user
-    })
-})
+    Item.findById(req.params.id, (err, item) => {
+      res.render('items/show', {
+        item,
+        user: req.user
+      })
+  })
 }
 
 function newItem(req, res) {
@@ -62,7 +62,10 @@ function edit(req, res) {
   });
 }
 
-// function deleteItem(req, res) {
-//   Item.deleteOne(req.params.id);
-//   res.redirect('/items');
-// }
+function deleteItem(req, res, next) {
+  Item.findByIdAndRemove(req.params.id, (err, item) => {
+    item.save(function(err){
+      res.redirect('/items')
+    })
+  })
+}

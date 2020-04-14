@@ -1,9 +1,15 @@
 <%- include('../partials/header') %>
 
-
-  <h1>Item #<%= itemNum %></h1>
-  <h3><%= item.item %></h3>
-  <a href="/items/<%= itemNum - 1 %>/edit">edit item</a>
+  <section class="show-page">
+    <div>item</div>
+    <div><%= item.item %></div>
+    <div>quantity</div>
+    <div><%= item.quantity %></div>
+    <div>date purchased</div>
+    <div><%= item.purchased %></div>
+    <div>date to eat by</div>
+    <div><%= item.expires %></div>
+  </section>
 
 
 <%- include('../partials/footer') %>
