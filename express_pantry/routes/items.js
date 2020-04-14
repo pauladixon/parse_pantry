@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var itemsCtrl = require('../controllers/items');
+const express = require('express');
+const router = express.Router();
+const itemsCtrl = require('../controllers/items');
 
 const isLoggedIn = (req, res, next) => {
     if (req.isAuthenticated()) return next()

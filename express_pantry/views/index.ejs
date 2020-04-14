@@ -51,18 +51,7 @@
       </tr>
     </thead>
     <tbody>
-      <% groceries.forEach((g) => { %>
-        <tr>
-          <td></td>
-          <td><%= g.quantity %></td>
-          <td><a href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
-          <td>
-            <form action="../groceries/<%= g._id %>?_method=DELETE"
-            id="delete-form" method="POST">
-            <button type="submit">X</button></form>
-          </td>
-        </tr>
-      <% }); %>
+
     </tbody>
   </table>
 

@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var groceriesCtrl = require('../controllers/groceries');
+const express = require('express');
+const router = express.Router();
+const groceriesCtrl = require('../controllers/groceries');
 
 
 router.get('/new', groceriesCtrl.new);

@@ -6,25 +6,23 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>pantry parser</title>
   <style>
-    body { margin: 0; }
-    canvas { display: block; }
   </style>
   <!-- Google Icon Fonts used by Materialize -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-
-<body>
+<div>
+<body class="hero-image">
     <nav>
-      <div>
-        <a href="index" class="title">pantry parser</a>
+      <div class="nav-group">
+        <a href="/" class="title">pantry parser</a>
         <ul class="right">
-            <li> <a href="/recipes"><i class="material-icons left">trending_flat</i>all recipes</a>
+            <li> <a href="/recipes"><i class="material-icons">trending_flat</i>all recipes</a>
           <li>
           <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>log out</a>
+            <a href="/logout"><i class="material-icons">trending_flat</i>log out</a>
           <% } else { %>
-            <a href="/auth/google"><i class="material-icons left">vpn_key</i>login with google</a>
+            <a href="/auth/google"><i class="material-icons">vpn_key</i>login with google</a>
           <% } %>
           </li>
         </ul>

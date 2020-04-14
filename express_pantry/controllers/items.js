@@ -20,7 +20,7 @@ function show(req, res) {
 
 function newItem(req, res) {
   newItem = new Item()
-  res.render('items', {
+  res.render('/', {
     time: req.time,
     user: req.user
   });
@@ -32,15 +32,15 @@ function create(req, res) {
   }
   const item = new Item(req.body)
   item.save(function(err) {
-    if (err) return res.redirect('index')
-    res.redirect('index')
+    if (err) return res.redirect('/')
+    res.redirect('/')
   })
 }
 
 function update(req, res) {
   req.body.done = req.body.done === 'on';
   Item.update(req.params.id, req.body);
-  res.redirect('index');
+  res.redirect('/');
 }
 
 function edit(req, res) {
@@ -54,7 +54,7 @@ function edit(req, res) {
 function deleteItem(req, res, next) {
   Item.findByIdAndRemove(req.params.id, (err, item) => {
     item.save(function(err){
-      res.redirect('index')
+      res.redirect('/')
     })
   })
 }

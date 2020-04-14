@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport')
-var indexCtrl = require('../controllers/index');
+const indexCtrl = require('../controllers/index');
 
 
 router.get('/', indexCtrl.index);

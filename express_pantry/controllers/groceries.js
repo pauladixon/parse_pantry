@@ -1,6 +1,7 @@
 var Grocery = require('../models/grocery');
 
 module.exports = {
+  // index,
   show,
   new: newGrocery,
   create,
@@ -20,7 +21,7 @@ function show(req, res) {
 
 function newGrocery(req, res) {
   newGrocery = new Grocery()
-  res.render('index', {
+  res.render('/', {
     time: req.time,
     user: req.user
   });
@@ -32,15 +33,15 @@ function create(req, res) {
   }
   const grocery = new Grocery(req.body)
   grocery.save(function(err) {
-    if (err) return res.redirect('index')
-    res.redirect('index')
+    if (err) return res.redirect('/')
+    res.redirect('/')
   })
 }
 
 function update(req, res) {
   req.body.done = req.body.done === 'on';
   Grocery.update(req.params.id, req.body);
-  res.redirect('index');
+  res.redirect('/');
 }
 
 function edit(req, res) {
@@ -54,7 +55,7 @@ function edit(req, res) {
 function deleteGrocery(req, res, next) {
   Grocery.findByIdAndRemove(req.params.id, (err, grocery) => {
     grocery.save(function(err){
-      res.redirect('index')
+      res.redirect('/')
     })
   })
 }
