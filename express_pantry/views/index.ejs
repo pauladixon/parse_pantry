@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('partials/header') %>
 
 <div id="pantry-list">
   <table class="lists" id="pantry">
@@ -14,10 +14,10 @@
       <% items.forEach( (i) => { %>
         <tr>
           <td><%= i.quantity %></td>
-          <td><a href="../items/<%= i._id %>"><%= i.item %></a></td>
+          <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
           <td><%= i.expires %></td>
           <td>
-            <form action="../items/<%= i._id %>?_method=DELETE"
+            <form action="/items/<%= i._id %>?_method=DELETE"
             id="delete-form" method="POST">
             <button type="submit">X</button></form>
           </td>
@@ -25,7 +25,7 @@
       <% }); %>
     </tbody>
   </table>
-  <form class="new-form" action="../items" method="POST" autocomplete="off">
+  <form class="new-form" action="index" method="POST" autocomplete="off">
     <label>item name
       <input type="text" name="item">
     </label><br>
@@ -55,9 +55,9 @@
         <tr>
           <td></td>
           <td><%= i.quantity %></td>
-          <td><a href="../items/<%= i._id %>"><%= i.item %></a></td>
+          <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
           <td>
-            <form action="../items/<%= i._id %>?_method=DELETE"
+            <form action="/items/<%= i._id %>?_method=DELETE"
             id="delete-form" method="POST">
             <button type="submit">X</button></form>
           </td>
@@ -66,7 +66,7 @@
     </tbody>
   </table>
 
-  <form class="new-form" action="../items" method="POST" autocomplete="off">
+  <form class="new-form" action="index" method="POST" autocomplete="off">
     <label>grocery
       <input type="text" name="item">
     </label><br>
@@ -113,10 +113,10 @@
   </table>
 
 
-  <form class="new-form" action="../items" method="POST" autocomplete="off">
+  <form class="new-form" action="index" method="POST" autocomplete="off">
     <input class="entry" type="submit" value="see all recipes">
     <input class="entry" type="submit" value="add new recipe">
   </form>
 </div>
 
-<%- include('../partials/footer') %>
+<%- include('partials/footer') %>

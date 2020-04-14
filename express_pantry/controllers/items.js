@@ -1,7 +1,7 @@
 var Item = require('../models/item');
 
 module.exports = {
-  index,
+  // index,
   show,
   new: newItem,
   create,
@@ -10,15 +10,15 @@ module.exports = {
   update
 };
 
-function index(req, res) {
-  Item.find({}, (err, items) => {
-    res.render('items/index', {
-      items,
-      time: req.time,
-      user: req.user
-    })
-  });
-}
+// function index(req, res) {
+//   Item.find({}, (err, items) => {
+//     res.render('index', {
+//       items,
+//       time: req.time,
+//       user: req.user
+//     })
+//   });
+// }
 
 function show(req, res) {
     Item.findById(req.params.id, (err, item) => {
@@ -43,15 +43,15 @@ function create(req, res) {
   }
   const item = new Item(req.body)
   item.save(function(err) {
-    if (err) return res.redirect('/items')
-    res.redirect('/items')
+    if (err) return res.redirect('index')
+    res.redirect('index')
   })
 }
 
 function update(req, res) {
   req.body.done = req.body.done === 'on';
   Item.update(req.params.id, req.body);
-  res.redirect('/items');
+  res.redirect('index');
 }
 
 function edit(req, res) {
@@ -65,7 +65,7 @@ function edit(req, res) {
 function deleteItem(req, res, next) {
   Item.findByIdAndRemove(req.params.id, (err, item) => {
     item.save(function(err){
-      res.redirect('/items')
+      res.redirect('index')
     })
   })
 }

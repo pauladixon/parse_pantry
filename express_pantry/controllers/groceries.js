@@ -1,7 +1,7 @@
 var Grocery = require('../models/grocery');
 
 module.exports = {
-  index,
+  // index,
   show,
   new: newGrocery,
   create,
@@ -10,15 +10,15 @@ module.exports = {
   update
 };
 
-function index(req, res) {
-  Grocery.find({}, (err, groceries) => {
-    res.render('groceries/index', {
-      groceries,
-      time: req.time,
-      user: req.user
-    })
-  });
-}
+// function index(req, res) {
+//   Grocery.find({}, (err, groceries) => {
+//     res.render('index', {
+//       groceries,
+//       time: req.time,
+//       user: req.user
+//     })
+//   });
+// }
 
 function show(req, res) {
     Grocery.findById(req.params.id, (err, grocery) => {
@@ -31,7 +31,7 @@ function show(req, res) {
 
 function newGrocery(req, res) {
   newGrocery = new Grocery()
-  res.render('groceries', {
+  res.render('index', {
     time: req.time,
     user: req.user
   });
@@ -43,15 +43,15 @@ function create(req, res) {
   }
   const grocery = new Grocery(req.body)
   grocery.save(function(err) {
-    if (err) return res.redirect('/groceries')
-    res.redirect('/groceries')
+    if (err) return res.redirect('index')
+    res.redirect('index')
   })
 }
 
 function update(req, res) {
   req.body.done = req.body.done === 'on';
   Grocery.update(req.params.id, req.body);
-  res.redirect('/groceries');
+  res.redirect('index');
 }
 
 function edit(req, res) {
@@ -65,7 +65,7 @@ function edit(req, res) {
 function deleteGrocery(req, res, next) {
   Grocery.findByIdAndRemove(req.params.id, (err, grocery) => {
     grocery.save(function(err){
-      res.redirect('/groceries')
+      res.redirect('index')
     })
   })
 }
