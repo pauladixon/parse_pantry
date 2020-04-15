@@ -2,7 +2,6 @@
   font-family: "Courier New", serif;
 }
 
-
 main {
   display: flex;
   justify-content: center;
@@ -27,37 +26,62 @@ body {
 }
 
 nav {
-  margin-bottom: 200px;
+  margin: 10px 0px 120px 0px;
   height: 65px;
+  width: 100vw;
+  display: grid;
 }
 
 .nav-group {
   display: flex;
   align-items: center;
   height: 50px;
-  margin: 0px;
-}
-
-#outer-div {
-  margin: 0;
-
-}
-
-.navigation {
-  margin: 0;
 }
 
 .title {
   color: #F0F0F0;
   font-family: Malina1;
-  font-size: 60px;
+  font-size: 50px;
   -webkit-text-stroke: 2px #94C6A3;
+  text-decoration: none;
+  padding: 0px 10px 10px 20px;
 }
 
-a {
-  text-decoration: none;
-  color: green;
+.title:hover:not(.active) {
+  background-color: #94C6A3;
+  color: #94C6A3;
+  font-family: Malina1;
+  font-size: 50px;
+  -webkit-text-stroke: 2px #F0F0F0;
+  border: solid #515E5E .25px;
 }
+
+.show-links {
+  font-weight: bold;
+  color: green;
+  text-decoration: none;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: #268f20;
+  float: right;
+  padding: 10px;
+  margin-right: auto;
+}
+
+.nav-right {
+  margin-top: 20px;
+  display: grid;
+  float: right;
+}
+
+.nav-links:hover:not(.active) {
+  background-color:#268f20;
+  color: #F0F0F0;
+  border: solid #515E5E .25px;
+}
+
 
 ul {
   list-style-type: none;
@@ -77,7 +101,7 @@ ul .right {
 
 .new-form * {
   font-size: 10px;
-  color: black;
+  color: #F0F0F0;
   padding: 10px;
   border: none;
   border-radius: 10px;
@@ -96,7 +120,7 @@ ul .right {
 
 table {
   font-size: 11px;
-  color: black;
+  color: #F0F0F0;
 }
 
 table thead th {
@@ -115,47 +139,50 @@ table td {
 
 }
 
-
 .show-page {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
-  background-color: gray;
+  background-color: #D2869F;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
 }
 
 .show-page div:nth-child(even) {
   font-weight: bold;
 }
 
-
 .pantry-list {
-  /* background-color: #B7AB5B; */
+  background-color: #B7AB5B;
   /* border: solid #515E5E .25px; */
-  background-color: #b4c9de;
+  /* background-color: #b4c9de; */
   display: grid;
   width: 300px;
   padding: 5px;
   opacity: 0.9;
 }
+.pantry-list:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
 
 .grocery-list {
   /* background-color: #9CDDDA; */
-  /* background-color: #AA7E9C; */
-  /* border: solid #515E5E .25px; */
-  background-color: #dbcdb2;
+  background-color: #AA7E9C;
+  /* background-color: #dbcdb2; */
   display: grid;
   width: 300px;
   margin: 0px 20px;
   padding: 5px;
   opacity: 0.9;
 }
+.grocery-list:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
 
 .recipe-list {
-  background-color: #cbc2ce;
-  /* background-color: #F0DADC;
-  background-color: #D2869F; */
   /* background-color: #C38DF6; */
-  /* background-color: #6A0D6B; */
+  background-color: #6A0D6B;
   /* background-color: #5C22be; */
   /* border: solid #515E5E .25px; */
   display: grid;
@@ -164,14 +191,28 @@ table td {
   opacity: 0.9;
 }
 
+.recipe-list:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
 .items-buttons {
   background-color: #f0f0f0;
+  color: #4e9f46;
 }
 
 .groceries-buttons {
   background-color: #f0f0f0;
+  color: #4e9f46;
 }
 
-.receipes-buttons {
+.recipes-buttons {
   background-color: #f0f0f0;
+  color: #4e9f46;
+}
+
+.x {
+  background-color: #f0f0f0;
+  color: #4e9f46;
+  border: none;
+  border-radius: 8px;
 }

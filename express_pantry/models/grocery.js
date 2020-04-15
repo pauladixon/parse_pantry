@@ -8,6 +8,9 @@ const grocerySchema = new Schema({
   },
   quantity: {
     type: Number,
+  },
+  notes: {
+    type: String,
   }
 }, {
   timestamps: true

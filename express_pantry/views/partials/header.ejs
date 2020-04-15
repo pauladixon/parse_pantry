@@ -14,18 +14,18 @@
 <div id="outer-div">
 <body class="hero-image">
   <nav>
-    <div class="nav-group">
-      <a href="/" class="title">pantry parser</a>
-      <ul class="right">
-          <li> <a href="/recipes"><i class="material-icons">trending_flat</i>all recipes</a>
-        <li>
-        <% if (user) { %>
-          <a href="/logout"><i class="material-icons">trending_flat</i>log out</a>
-        <% } else { %>
-          <a href="/auth/google"><i class="material-icons">vpn_key</i>login with google</a>
-        <% } %>
-        </li>
+      <ul>
+        <li><a href="/" class="title">pantry parser</a></li>
+        <div class="nav-right">
+          <li> <a class="nav-links" href="/recipes">all recipes</a>
+          <li>
+          <% if (user) { %>
+            <a class="nav-links" href="/logout">log out</a>
+          <% } else { %>
+            <a class="nav-links" href="/auth/google">login with google</a>
+          <% } %>
+          </li>
+        </div>
       </ul>
-    </div>
   </nav>
   <main>

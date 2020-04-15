@@ -11,6 +11,9 @@ const itemSchema = new Schema({
   },
   expires: {
     type: String
+  },
+  notes: {
+    type: String,
   }
 }, {
   timestamps: true

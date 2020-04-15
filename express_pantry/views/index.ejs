@@ -7,6 +7,7 @@
         <th></th>
         <th>pantry item</th>
         <th>expires</th>
+        <th>notes</th>
         <th></th>
       </tr>
     </thead>
@@ -14,12 +15,13 @@
       <% items.forEach((i) => { %>
         <tr>
           <td><%= i.quantity %></td>
-          <td><a href="/items/<%= i._id %>"><%= i.item %></a></td>
+          <td><a class="show-links" href="/items/<%= i._id %>"><%= i.item %></a></td>
           <td><%= i.expires %></td>
+          <td><%= i.notes %> </td>
           <td>
             <form action="../items/<%= i._id %>?_method=DELETE"
             id="delete-form" method="POST">
-            <button class="items-buttons" type="submit">X</button></form>
+            <button class="x" class="items-buttons" type="submit">X</button></form>
           </td>
         </tr>
       <% }); %>
@@ -34,6 +36,9 @@
     </label><br>
     <label>expires:
       <input class="items-buttons" type="text" name="expires">
+    </label><br>
+    <label>any notes:
+      <input class="items-buttons" type="text" name="notes">
     </label>
     <input class="items-buttons" class="entry" type="submit" value="add pantry item">
   </form>
@@ -45,21 +50,21 @@
     <thead>
       <tr>
         <th></th>
-        <th>quantity</th>
         <th>grocery</th>
+        <th>notes</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <% groceries.forEach((g) => { %>
         <tr>
-          <td></td>
           <td><%= g.quantity %></td>
-          <td><a href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
+          <td><a class="show-links" href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
+          <td><%= g.notes %></td>
           <td>
             <form action="../groceries/<%= g._id %>?_method=DELETE"
             id="delete-form" method="POST">
-            <button class="groceries-buttons" type="submit">X</button></form>
+            <button class="x" class="groceries-buttons" type="submit">X</button></form>
           </td>
         </tr>
       <% }); %>
@@ -73,6 +78,9 @@
     <label>quantity:
       <input class="groceries-buttons" type="number" name="quantity">
     </label><br>
+    <label>any notes:
+      <input class="groceries-buttons" type="text" name="notes">
+    </label>
     <input class="groceries-buttons" class="entry" type="submit" value="add grocery item">
   </form>
 </div>
@@ -92,21 +100,21 @@
           <td></td>
           <td>recipe 1</td>
           <td>
-            <button class="recipes-buttons" type="submit">X</button></form>
+            <button class="x" class="recipes-buttons" type="submit">X</button></form>
           </td>
         </tr>
         <tr>
           <td></td>
           <td>recipe 2</td>
           <td>
-            <button class="recipes-buttons" type="submit">X</button></form>
+            <button class="x" class="recipes-buttons" type="submit">X</button></form>
           </td>
         </tr>
         <tr>
           <td></td>
           <td>recipe 3</td>
           <td>
-            <button class="recipes-buttons" type="submit">X</button></form>
+            <button class="x" class="recipes-buttons" type="submit">X</button></form>
           </td>
         </tr>
     </tbody>
