@@ -29,10 +29,10 @@ const gPromise = Grocery.find((err, groceries) => {
 })
 
 function index(req, res) {
-  Promise.all([gPromise, iPromise]).then((items, groceries) => {
+  Promise.all([iPromise, gPromise]).then((values) => {
     res.render('index', {
-      items,
-      groceries,
+      items: values[0], 
+      groceries: values[1],
       time: req.time,
       user: req.user,
       title: 'parse pantry' 

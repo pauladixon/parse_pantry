@@ -1,12 +1,12 @@
 <%- include('partials/header') %>
 
-<div id="pantry-list">
+<div class="pantry-list">
   <table class="lists" id="pantry">
     <thead>
       <tr>
         <th></th>
         <th>pantry item</th>
-        <th>date to eat by</th>
+        <th>expires</th>
         <th></th>
       </tr>
     </thead>
@@ -19,28 +19,28 @@
           <td>
             <form action="../items/<%= i._id %>?_method=DELETE"
             id="delete-form" method="POST">
-            <button type="submit">X</button></form>
+            <button class="items-buttons" type="submit">X</button></form>
           </td>
         </tr>
       <% }); %>
     </tbody>
   </table>
   <form class="new-form" action="../items" method="POST" autocomplete="off">
-    <label>item name
-      <input type="text" name="item">
+    <label>item name:
+      <input class="items-buttons" type="text" name="item">
     </label><br>
-    <label>quantity
-      <input type="number" name="quantity">
+    <label>quantity:
+      <input class="items-buttons" type="number" name="quantity">
     </label><br>
-    <label>date to eat by
-      <input type="text" name="expires">
+    <label>expires:
+      <input class="items-buttons" type="text" name="expires">
     </label>
-    <input class="entry" type="submit" value="add pantry item">
+    <input class="items-buttons" class="entry" type="submit" value="add pantry item">
   </form>
 </div>
 
 
-<div id="grocery-list">
+<div class="grocery-list">
   <table class="lists" id="grocery">
     <thead>
       <tr>
@@ -51,23 +51,34 @@
       </tr>
     </thead>
     <tbody>
-
+      <% groceries.forEach((g) => { %>
+        <tr>
+          <td></td>
+          <td><%= g.quantity %></td>
+          <td><a href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
+          <td>
+            <form action="../groceries/<%= g._id %>?_method=DELETE"
+            id="delete-form" method="POST">
+            <button class="groceries-buttons" type="submit">X</button></form>
+          </td>
+        </tr>
+      <% }); %>
     </tbody>
   </table>
 
   <form class="new-form" action="../groceries" method="POST" autocomplete="off">
-    <label>grocery
-      <input type="text" name="grocery">
+    <label>grocery:
+      <input class="groceries-buttons" type="text" name="grocery">
     </label><br>
-    <label>quantity
-      <input type="number" name="quantity">
+    <label>quantity:
+      <input class="groceries-buttons" type="number" name="quantity">
     </label><br>
-    <input class="entry" type="submit" value="add grocery item">
+    <input class="groceries-buttons" class="entry" type="submit" value="add grocery item">
   </form>
 </div>
 
 
-<div id="recipe-list">
+<div class="recipe-list">
   <table class="lists" id="recipe">
     <thead>
       <tr>
@@ -81,21 +92,21 @@
           <td></td>
           <td>recipe 1</td>
           <td>
-            <button type="submit">X</button></form>
+            <button class="recipes-buttons" type="submit">X</button></form>
           </td>
         </tr>
         <tr>
           <td></td>
           <td>recipe 2</td>
           <td>
-            <button type="submit">X</button></form>
+            <button class="recipes-buttons" type="submit">X</button></form>
           </td>
         </tr>
         <tr>
           <td></td>
           <td>recipe 3</td>
           <td>
-            <button type="submit">X</button></form>
+            <button class="recipes-buttons" type="submit">X</button></form>
           </td>
         </tr>
     </tbody>
@@ -103,8 +114,8 @@
 
 
   <form class="new-form" action="../items" method="POST" autocomplete="off">
-    <input class="entry" type="submit" value="see all recipes">
-    <input class="entry" type="submit" value="add new recipe">
+    <input class="recipes-buttons" class="entry" type="submit" value="see all recipes">
+    <input class="recipes-buttons" class="entry" type="submit" value="add new recipe">
   </form>
 </div>
 

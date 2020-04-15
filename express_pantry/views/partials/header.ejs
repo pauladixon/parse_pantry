@@ -11,21 +11,21 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-<div>
+<div id="outer-div">
 <body class="hero-image">
-    <nav>
-      <div class="nav-group">
-        <a href="/" class="title">pantry parser</a>
-        <ul class="right">
-            <li> <a href="/recipes"><i class="material-icons">trending_flat</i>all recipes</a>
-          <li>
-          <% if (user) { %>
-            <a href="/logout"><i class="material-icons">trending_flat</i>log out</a>
-          <% } else { %>
-            <a href="/auth/google"><i class="material-icons">vpn_key</i>login with google</a>
-          <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <nav>
+    <div class="nav-group">
+      <a href="/" class="title">pantry parser</a>
+      <ul class="right">
+          <li> <a href="/recipes"><i class="material-icons">trending_flat</i>all recipes</a>
+        <li>
+        <% if (user) { %>
+          <a href="/logout"><i class="material-icons">trending_flat</i>log out</a>
+        <% } else { %>
+          <a href="/auth/google"><i class="material-icons">vpn_key</i>login with google</a>
+        <% } %>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <main>
