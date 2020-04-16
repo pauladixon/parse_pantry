@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const grocerySchema = new Schema({
-  item: {
+  grocery: {
     type: String,
     require: true
   },

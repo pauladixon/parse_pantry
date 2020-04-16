@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<section class="show-page">
+  <div>recipe: </div>
+  <div><%= recipe.recipe %></div>
+  <div>author: </div>
+  <div><%= recipe.author %></div>
+  <div>source: </div>
+  <div><%= recipe.source %></div>
+  <div>servings: </div>
+  <div><%= recipe.servings %></div>
+  <div>time to make: </div>
+  <div><%= recipe.time %></div>
+  <div>ingredients: </div>
+  <div><% recipe.ingredients %></div>
+  <div>directions: </div>
+  <div><%= recipe.directions%></div>
+  <div>notes: </div>
+  <div><%= recipe.notes %></div>
+  <div>pin to dashboard: </div>
+  <div><input type="checkbox" name="pinned"></div>
+  <form action="../recipes/<%= recipe._id %>?_method=DELETE"
+    id="delete-form" method="POST">
+    <button class="x" class="recipes-buttons" type="submit">delete this recipe</button></form>
+
+  <li> <a class="recipes-buttons" href="/recipes">back to all recipes</a></li>
+  <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a></li>
+</section>
+
+
+<%- include('../partials/footer') %>
