@@ -3,7 +3,13 @@ const passport = require('passport')
 const indexCtrl = require('../controllers/index');
 
 
-router.get('/', indexCtrl.index);
+const isLoggedIn = (req, res, next) => {
+  if (req.isAuthenticated()) return next()
+  res.redirect('/auth/google')
+}
+
+
+router.get('/', isLoggedIn, indexCtrl.index);
 
 
  // Google OAuth login route

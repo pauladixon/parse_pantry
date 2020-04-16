@@ -7,10 +7,10 @@ const isLoggedIn = (req, res, next) => {
     res.redirect('/auth/google')
 }
 
-router.get('/new', isLoggedIn, groceriesCtrl.new);
-router.get('/:id', isLoggedIn, groceriesCtrl.show);
-router.post('/', isLoggedIn, groceriesCtrl.create);
-router.get('/:id', isLoggedIn, groceriesCtrl.update);
-router.delete('/:id', isLoggedIn, groceriesCtrl.delete);
+router.get('/new', groceriesCtrl.new);
+router.get('/:id', groceriesCtrl.show);
+router.post('/', groceriesCtrl.create);
+router.get('/:id', groceriesCtrl.update);
+router.delete('/:id', groceriesCtrl.delete);
 
 module.exports = router;
