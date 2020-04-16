@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-  <h1>edit recipe</h1>
+  <h6>edit item</h6>
   <form action="/recipes/<%= idx %>?_method=PUT" method="POST" autocomplete="off">
     <input type="text" name="recipe" value="<%= recipe.recipe %>">
     <button type="submit">save recipe</button>

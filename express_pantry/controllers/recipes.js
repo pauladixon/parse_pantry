@@ -42,13 +42,7 @@ function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
-  const ingredient = {
-    ingredient: req.body.ingredient,
-    quantity: req.body.quantity,
-    unit: req.body.unit
-  }
   const recipe = new Recipe(req.body)
-  recipe.ingredients.push(ingredient)
   recipe.save(function(err) {
     if (err) return res.redirect('/recipes/new')
     res.redirect('/recipes')

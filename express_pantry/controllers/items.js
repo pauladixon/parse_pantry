@@ -4,10 +4,21 @@ module.exports = {
   show,
   new: newItem,
   create,
-  delete: deleteItem,
-  edit,
-  update
+  update,
+  delete: deleteItem
 };
+
+function update(req, res) {
+  Item.findById(req.params.id, (err, item) => {
+    item.item = req.body.item
+    item.quantity = req.body.quantity
+    item.expires = req.body.expires
+    item.notes = req.body.notes
+    item.save((err) => {
+      res.redirect(`/items/${req.params.id}`);
+    })
+  })
+}
 
 function show(req, res) {
     Item.findById(req.params.id, (err, item) => {
@@ -35,20 +46,6 @@ function create(req, res) {
     if (err) return res.redirect('/')
     res.redirect('/')
   })
-}
-
-function update(req, res) {
-  req.body.done = req.body.done === 'on';
-  Item.update(req.params.id, req.body);
-  res.redirect('/');
-}
-
-function edit(req, res) {
-  res.render('items/edit', {
-    item: Item.getOne(req.params.id),
-    idx: req.params.id,
-    user: req.user
-  });
 }
 
 function deleteItem(req, res, next) {
