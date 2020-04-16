@@ -4,6 +4,7 @@ module.exports = {
   show,
   new: newItem,
   create,
+  edit,
   update,
   delete: deleteItem
 };
@@ -16,6 +17,15 @@ function update(req, res) {
     item.notes = req.body.notes
     item.save((err) => {
       res.redirect(`/items/${req.params.id}`);
+    })
+  })
+}
+
+function edit(req, res) {
+  Item.findById(req.params.id, (err, item) => {
+    res.render(`/items/${req.params.id}/edit`, {
+      item,
+      user: req.user
     })
   })
 }

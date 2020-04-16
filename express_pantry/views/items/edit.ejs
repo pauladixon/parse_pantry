@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<section class="show-page">
+  <form action="/items/update/<%= item._id %>?_method=PUT" method="POST" autocomplete="off">
+    <label for="item-edit">item:</label>
+    <textarea name="item" id="item-edit"><%= item.item %></textarea>
+    <label for="quantity-edit">quantity:</label>
+    <textarea name="quantity" id="quantity-edit"><%= item.quantity %></textarea>
+    <label for="expires-edit">expires:</label>
+    <textarea name="expires" id="expires-edit"><%= item.expires %></textarea>
+    <label for="notes-edit">notes:</label>
+    <textarea name="notes" id="notes-edit"><%= item.notes %></textarea>
+    <button type="submit">save changes</button> 
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

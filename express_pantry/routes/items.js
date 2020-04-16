@@ -10,7 +10,8 @@ const isLoggedIn = (req, res, next) => {
 router.get('/new', itemsCtrl.new);
 router.get('/:id', itemsCtrl.show);
 router.post('/', itemsCtrl.create);
-router.get('/:id', itemsCtrl.update);
+router.get('/items/:id/edit', itemsCtrl.edit)
+router.put('/items/update/:id', itemsCtrl.update);
 router.delete('/:id', itemsCtrl.delete);
 
 module.exports = router;
