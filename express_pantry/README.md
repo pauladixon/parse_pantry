@@ -1,7 +1,5 @@
 # parse pantry
 
-## wireframes:
-
 <img src="https://i.imgur.com/Eooz1Ez.png"
      alt="wireframe 1"
      width=500 
