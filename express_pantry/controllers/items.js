@@ -10,7 +10,6 @@ module.exports = {
   delete: deleteItem
 };
 
-
 function show(req, res) {
   User.findById(req.user._id, function(err, user) {
       let item = user.items.id(req.params.id) 

@@ -22,8 +22,6 @@ const uPromise = User.find((err, users) => {
 
 function index(req, res) {
   Promise.all([iPromise, gPromise, rPromise, uPromise]).then((values) => {
-    const payload = values[3]
-    console.log(payload)
     res.render('index', {
       items: values[0], 
       groceries: values[1],

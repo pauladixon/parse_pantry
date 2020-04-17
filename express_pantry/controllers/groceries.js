@@ -10,7 +10,6 @@ module.exports = {
   delete: deleteGrocery
 };
 
-
 function show(req, res) {
   User.findById(req.user._id, function(err, user) {
       let grocery = user.groceries.id(req.params.id) 

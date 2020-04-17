@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
   <section class="gro-show-page">
-    <div>grocery</div>
+    <div>grocery:</div>
     <div><%= grocery.grocery %></div>
-    <div>quantity</div>
+    <div>quantity:</div>
     <div><%= grocery.quantity %></div>
+    <div>notes:</div>
+    <div><%= grocery.notes %></div>
     <div>
       <form class="new-form" action="../../" method="GET" autocomplete="off">
         <input class="recipes-buttons" href="/" type="submit" value="back to dashboard">
