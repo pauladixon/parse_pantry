@@ -421,7 +421,6 @@ table #recipe .lists {
 }
 
 .items-buttons {
-  margin: 3px;
   background-color: #f0f0f0;
   color: black;
 }
@@ -430,7 +429,6 @@ table #recipe .lists {
 }
 
 .groceries-buttons {
-  margin: 3px;
   background-color: #f0f0f0;
   color: black;
 }
@@ -439,7 +437,7 @@ table #recipe .lists {
 }
 
 .recipes-buttons {
-  margin: 30px 3px 3px 3px;
+  margin-top: 30px;
   background-color: #f0f0f0;
   color:  black;
 }
