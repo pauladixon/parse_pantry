@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <% if (user) {%>
-      <% users[0].items.forEach((i, idx) => { %>
+      <% user.items.forEach((i, idx) => { %>
         <tr>
           <td><%= i.quantity %></td>
           <td><a class="show-links" href="/items/<%= i._id %>"><%= i.item %></a></td>
