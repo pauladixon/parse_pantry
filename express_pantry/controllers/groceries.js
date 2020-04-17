@@ -1,21 +1,23 @@
 var Grocery = require('../models/grocery');
+let User = require('../models/user')
 
 module.exports = {
-  // index,
   show,
   new: newGrocery,
   create,
-  delete: deleteGrocery,
   edit,
-  update
+  update,
+  delete: deleteGrocery
 };
 
+
 function show(req, res) {
-    Grocery.findById(req.params.id, (err, grocery) => {
-      res.render('groceries/show', {
-        grocery,
-        user: req.user
-      })
+  User.findById(req.user._id, function(err, user) {
+      let grocery = user.groceries.id(req.params.id) 
+        res.render('groceries/show', {
+          user: req.user,
+          grocery,
+      });
   })
 }
 
@@ -28,39 +30,40 @@ function newGrocery(req, res) {
 }
 
 function create(req, res) {
-  for (let key in req.body) {
-    if (req.body[key] === '') delete req.body[key]
-  }
-  const grocery = new Grocery(req.body)
-  grocery.save(function(err) {
-    if (err) return res.redirect('/')
-    res.redirect('/')
+  User.findById(req.user._id, function(err, user) {
+    user.groceries.push(req.body);
+    user.save(function(err) {
+      res.redirect('/');
+    })
   })
 }
 
 function update(req, res) {
-  Grocery.findById(req.params.id, (err, grocery) => {
-    grocery.grocery = req.body.grocery
-    grocery.quantity = req.body.quantity
-    grocery.notes = req.body.notes
-    grocery.save((err) => {
+  User.findById(req.user._id, function(err, user) {
+  let grocery = user.groceries.id(req.params.id);
+  grocery.grocery = req.body.grocery
+  grocery.quantity = req.body.quantity
+  grocery.notes = req.body.notes
+    user.save((err) => {
       res.redirect(`/groceries/${req.params.id}`);
     })
   })
-}
+} 
 
 function edit(req, res) {
-  Grocery.findById(req.params.id, (err, grocery) => {
-    res.render(`./groceries/edit`, {
-      grocery,
-      user: req.user
+  User.findById(req.user._id, function(err, user) {
+  let grocery = user.groceries.id(req.params.id) 
+    res.render('groceries/edit', {
+      user: req.user,
+      grocery
     })
   })
 }
 
-function deleteGrocery(req, res, next) {
-  Grocery.findByIdAndRemove(req.params.id, (err, grocery) => {
-    grocery.save(function(err){
+function deleteGrocery(req, res) {
+  User.findById(req.user._id, function(err, user) {
+    user.groceries.splice(req.params.id, 1);
+    user.save(function (err) {
       res.redirect('/')
     })
   })

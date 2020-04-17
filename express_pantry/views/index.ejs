@@ -13,7 +13,7 @@
     </thead>
     <tbody>
       <% if (user) {%>
-      <% user.items.forEach((i, idx) => { %>
+      <% user.items.forEach((i) => { %>
         <tr>
           <td><%= i.quantity %></td>
           <td><a class="show-links" href="/items/<%= i._id %>"><%= i.item %></a></td>
@@ -25,7 +25,7 @@
             <button class="x" class="items-buttons" type="submit">X</button></form>
           </td>
         </tr>
-      <% }); %>
+      <% }) %>
       <% } %>
     </tbody>
   </table>
@@ -58,7 +58,8 @@
       </tr>
     </thead>
     <tbody>
-      <% groceries.forEach((g) => { %>
+      <% if (user) {%>
+        <% user.groceries.forEach((g) => { %>
         <tr>
           <td><%= g.quantity %></td>
           <td><a class="show-links" href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
@@ -69,7 +70,8 @@
             <button class="x" class="groceries-buttons" type="submit">X</button></form>
           </td>
         </tr>
-      <% }); %>
+       <% }) %>
+      <% } %> 
     </tbody>
   </table>
 

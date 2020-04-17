@@ -19,11 +19,27 @@ const itemSchema = new Schema({
   timestamps: true
 })
 
+const grocerySchema = new mongoose.Schema({
+  grocery: {
+    type: String,
+    require: true
+  },
+  quantity: {
+    type: String,
+  },
+  notes: {
+    type: String,
+  }
+}, {
+  timestamps: true
+})
+
 const userSchema = new Schema({
   name: String,
   email: String,
   googleId: String,
   items:[itemSchema],
+  groceries:[grocerySchema]
 }, {
   timestamps: true
 });

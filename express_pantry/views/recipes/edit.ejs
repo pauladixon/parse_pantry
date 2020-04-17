@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-  <form class="show-page" action="/recipes/update/<%= recipe._id %>?_method=PUT" method="POST" autocomplete="off">
+  <form class="show-page" action="../../recipes/update/<%= recipe._id %>?_method=PUT" method="POST" autocomplete="off">
     <label for="recipe-edit">recipe:</label>
     <textarea name="recipe" id="recipe-edit"><%= recipe.recipe %></textarea> 
     <label for="author-edit">author:</label>
@@ -16,9 +16,6 @@
     <label for="directions-edit">directions:</label>
     <textarea type="text" name="directions" rows="20" cols="40" id="directions-edit"><%= recipe.directions %></textarea> 
     <button type="submit">save changes</button> 
-
-    <li> <a class="recipes-buttons" href="/recipes">back to all recipes</a></li>
-  <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a></li>
   </form>
 
 <%- include('../partials/footer') %>

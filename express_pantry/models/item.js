@@ -19,14 +19,4 @@ const itemSchema = new Schema({
   timestamps: true
 })
 
-// const userSchema = new Schema({
-//   name: String,
-//   email: String,
-//   googleId: String,
-//   item:[itemSchema],
-// }, {
-//   timestamps: true
-// });
-
-// module.exports = mongoose.model('User', userSchema);
 module.exports = mongoose.model('Item', itemSchema)
