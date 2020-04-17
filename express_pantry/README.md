@@ -1,4 +1,4 @@
-# parse pantry
+# pantry parser
 
 <img src="https://i.imgur.com/Eooz1Ez.png"
      alt="wireframe 1"
