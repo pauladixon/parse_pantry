@@ -428,3 +428,24 @@ table #recipe .lists {
 pre {
   white-space: pre-wrap; 
 }
+
+.show-links {
+  color: white;
+}
+
+.show-links:hover:not(.active) {
+  color: white;
+}
+
+/* .title {
+  color: #F0F0F0;
+  font-family: Malina1;
+  font-size: 50px;
+  -webkit-text-stroke: 2px black;
+  text-decoration: none;
+  padding: 0px 10px 10px 20px;
+} */
+
+.show-links:hover:not(.active) {
+  font-weight: normal;
+}
