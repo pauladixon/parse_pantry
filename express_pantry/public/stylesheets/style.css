@@ -29,7 +29,7 @@ body {
 }
 
 nav {
-  margin: 20px 0px 150px 0px;
+  margin: 20px 0px 130px 0px;
   height: 65px;
   width: 100vw;
   display: grid;
@@ -421,6 +421,7 @@ table #recipe .lists {
 }
 
 .items-buttons {
+  margin: 3px;
   background-color: #f0f0f0;
   color: black;
 }
@@ -429,6 +430,7 @@ table #recipe .lists {
 }
 
 .groceries-buttons {
+  margin: 3px;
   background-color: #f0f0f0;
   color: black;
 }
@@ -437,6 +439,7 @@ table #recipe .lists {
 }
 
 .recipes-buttons {
+  margin: 30px 3px 3px 3px;
   background-color: #f0f0f0;
   color:  black;
 }
