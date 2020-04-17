@@ -12,13 +12,13 @@
     </thead>
     <tbody>
       <% if (user) {%>
-      <% user.items.forEach((i) => { %>
+      <% user.items.forEach((i, idx) => { %>
         <tr>
           <td><%= i.quantity %></td>
           <td><a class="show-links" href="/items/<%= i._id %>"><%= i.item %></a></td>
           <td><%= i.expires %></td>
           <td>
-            <form action="../items/<%= i._id %>?_method=DELETE"
+            <form action="../items/<%= idx %>?_method=DELETE"
             id="delete-form" method="POST">
             <button class="x" class="items-buttons" type="submit">X</button></form>
           </td>
@@ -54,13 +54,13 @@
     </thead>
     <tbody>
       <% if (user) {%>
-        <% user.groceries.forEach((g) => { %>
+        <% user.groceries.forEach((g, idx) => { %>
         <tr>
           <td><%= g.quantity %></td>
           <td><a class="show-links" href="../groceries/<%= g._id %>"><%= g.grocery %></a></td>
           <td><%= g.notes %></td>
           <td>
-            <form action="../groceries/<%= g._id %>?_method=DELETE"
+            <form action="../groceries/<%= idx %>?_method=DELETE"
             id="delete-form" method="POST">
             <button class="x" class="groceries-buttons" type="submit">X</button></form>
           </td>
