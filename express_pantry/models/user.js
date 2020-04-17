@@ -1,10 +1,29 @@
 var mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var userSchema = new mongoose.Schema({
+const itemSchema = new Schema({
+  item: {
+    type: String,
+    require: true
+  },
+  quantity: {
+    type: String,
+  },
+  expires: {
+    type: String
+  },
+  notes: {
+    type: String,
+  },
+}, {
+  timestamps: true
+})
+
+const userSchema = new Schema({
   name: String,
   email: String,
-  avatar: String,
   googleId: String,
+  items:[itemSchema],
 }, {
   timestamps: true
 });

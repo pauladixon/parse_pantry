@@ -12,7 +12,8 @@
       </tr>
     </thead>
     <tbody>
-      <% items.forEach((i) => { %>
+      <% if (user) {%>
+      <% users[0].items.forEach((i, idx) => { %>
         <tr>
           <td><%= i.quantity %></td>
           <td><a class="show-links" href="/items/<%= i._id %>"><%= i.item %></a></td>
@@ -25,6 +26,7 @@
           </td>
         </tr>
       <% }); %>
+      <% } %>
     </tbody>
   </table>
   <form class="new-form" action="../items" method="POST" autocomplete="off">
@@ -32,7 +34,7 @@
       <input class="items-buttons" type="text" name="item">
     </label><br>
     <label>quantity:
-      <input class="items-buttons" type="number" name="quantity">
+      <input class="items-buttons" type="text" name="quantity">
     </label><br>
     <label>expires:
       <input class="items-buttons" type="text" name="expires">
@@ -76,7 +78,7 @@
       <input class="groceries-buttons" type="text" name="grocery">
     </label><br>
     <label>quantity:
-      <input class="groceries-buttons" type="number" name="quantity">
+      <input class="groceries-buttons" type="text" name="quantity">
     </label><br>
     <label>any notes:
       <input class="groceries-buttons" type="text" name="notes">
@@ -90,8 +92,7 @@
     <thead>
       <tr>
         <th></th>
-        <th>pinned recipes</th>
-        <th>notes</th>
+        <th>recipes</th>
         <th></th>
       </tr>
     </thead>
@@ -100,22 +101,15 @@
         <tr>
           <td></td>
           <td><a class="show-links" href="../recipes/<%= r._id %>"><%= r.recipe %></a></td>
-          <td><%= r.notes %></td>
-          <td>
-            <form action="../recipes/<%= r._id %>?_method=DELETE"
-            id="delete-form" method="POST">
-            <button class="x" class="recipes-buttons" type="submit">X</button></form>
-          </td>
         </tr>
       <% }); %>
     </tbody>
   </table>
 
-  <li> <a class="recipes-buttons" href="/recipes">see all recipes</a>
-  <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a>
-
   <form class="new-form" action="../recipes" method="POST" autocomplete="off">
     <input class="recipes-buttons" href="/recipes" type="submit" value="see all recipes">
+  </form>
+  <form class="new-form" action="../recipes/new" method="GET" autocomplete="off">
     <input class="recipes-buttons" href="/recipes/new" type="submit" value="add new recipe">
   </form>
 </div>

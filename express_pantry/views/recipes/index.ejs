@@ -1,23 +1,25 @@
 <%- include('../partials/header') %>
-<section class="show-page"
-<table class="all-recipes">
-  <thead>
-    <tr>
-        <th>pin?</th>
-        <th>recipe</th>
-        <th>author</th>
-        <th>notes</th>
-        <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% recipes.forEach(function(r) { %>
+<section class="show-page">
+  <table class="lists" id="recipe">
+    <thead>
       <tr>
-        <td><input type="checkbox" name="pinned"></td>
-        <td><a href="/recipes/<%= r._id %>"><%= r.recipe %></td>
-        <td><%= r.author %></td>
-        <td><%= r.notes %></td>
+        <th></th>
+        <th>recipes</th>
+        <th>author</th>
+        <th>time to make</th>
+        <th>ingredients</th>
+        <th></th>
       </tr>
+    </thead>
+    <tbody>
+      <% recipes.forEach((r) => { %>
+        <tr>
+          <td></td>
+          <td><a class="show-links" href="../recipes/<%= r._id %>"><%= r.recipe %></a></td>
+          <td><%= r.author %></td>
+          <td><%= r.time %></td>
+          <td><%= r.ingredients %></td>
+        </tr>
       <% }); %>
     </tbody>
   </table>

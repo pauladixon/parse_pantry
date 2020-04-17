@@ -5,10 +5,9 @@ module.exports = {
   show,
   new: newRecipe,
   create,
-  delete: deleteRecipe,
   edit,
   update,
-  // addtoIndex,
+  delete: deleteRecipe
 };
 
 function index(req, res) {
@@ -22,12 +21,12 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Recipe.findById(req.params.id, (err, recipe) => {
-    res.render('recipes/show', {
-      recipe,
-      user: req.user
-    })
-})
+    Recipe.findById(req.params.id, (err, recipe) => {
+      res.render('recipes/show', {
+        recipe,
+        user: req.user
+      })
+  })
 }
 
 function newRecipe(req, res) {
@@ -50,17 +49,27 @@ function create(req, res) {
 }
 
 function update(req, res) {
-  req.body.done = req.body.done === 'on';
-  Recipe.update(req.params.id, req.body);
-  res.redirect(`/recipes/${recipe._id}`);
+  Recipe.findById(req.params.id, (err, recipe) => {
+    recipe.recipe = req.body.recipe
+    recipe.author = req.body.author
+    recipe.source = req.body.source
+    recipe.servings = req.body.servings
+    recipe.time = req.body.time
+    recipe.ingredients = req.body.ingredients
+    recipe.directions = req.body.directions
+    recipe.save((err) => {
+      res.redirect(`/recipes/${req.params.id}`);
+    })
+  })
 }
 
 function edit(req, res) {
-  res.render('recipes/edit', {
-    recipe: Recipe.getOne(req.params.id),
-    idx: req.params.id,
-    user: req.user
-  });
+  Recipe.findById(req.params.id, (err, recipe) => {
+    res.render(`./recipes/edit`, {
+      recipe,
+      user: req.user
+    })
+  })
 }
 
 function deleteRecipe(req, res, next) {
@@ -70,13 +79,3 @@ function deleteRecipe(req, res, next) {
     })
   })
 }
-
-
-// function addtoIndex(req, res) {
-//   Recipe.findById(req.params.id, function (err, recipe) {
-//     recipe.recipes.push(req.body.performerId);
-//     recipe.save(function (err) {
-//       res.redirect('/');
-//     });
-//   });
-// }

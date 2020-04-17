@@ -12,13 +12,12 @@
   <div>time to make: </div>
   <div><%= recipe.time %></div>
   <div>ingredients: </div>
-  <div><% recipe.ingredients %></div>
+  <div><pre><%= recipe.ingredients %></pre></div>
   <div>directions: </div>
-  <div><%= recipe.directions%></div>
-  <div>notes: </div>
-  <div><%= recipe.notes %></div>
-  <div>pin to dashboard: </div>
-  <div><input type="checkbox" name="pinned"></div>
+  <div><pre><%= recipe.directions%></pre></div>
+  <form method="GET" action="/recipes/<%= recipe._id %>/edit">
+    <button type="submit">edit</button>
+  </form>
   <form action="../recipes/<%= recipe._id %>?_method=DELETE"
     id="delete-form" method="POST">
     <button class="x" class="recipes-buttons" type="submit">delete this recipe</button></form>

@@ -6,8 +6,11 @@
     <div>quantity</div>
     <div><%= grocery.quantity %></div>
     <div><a href="/">go back</a></div>
-    <button type="submit" class="edit-button">edit item</button>  
+    <form method="GET" action="/groceries/<%= grocery._id %>/edit">
+      <button type="submit">edit</button>
+    </form>
   </section>
 
 
 <%- include('../partials/footer') %>
+

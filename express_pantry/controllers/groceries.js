@@ -39,17 +39,23 @@ function create(req, res) {
 }
 
 function update(req, res) {
-  req.body.done = req.body.done === 'on';
-  Grocery.update(req.params.id, req.body);
-  res.redirect('/');
+  Grocery.findById(req.params.id, (err, grocery) => {
+    grocery.grocery = req.body.grocery
+    grocery.quantity = req.body.quantity
+    grocery.notes = req.body.notes
+    grocery.save((err) => {
+      res.redirect(`/groceries/${req.params.id}`);
+    })
+  })
 }
 
 function edit(req, res) {
-  res.render('groceries/edit', {
-    grocery: Grocery.getOne(req.params.id),
-    idx: req.params.id,
-    user: req.user
-  });
+  Grocery.findById(req.params.id, (err, grocery) => {
+    res.render(`./groceries/edit`, {
+      grocery,
+      user: req.user
+    })
+  })
 }
 
 function deleteGrocery(req, res, next) {

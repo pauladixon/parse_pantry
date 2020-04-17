@@ -1,9 +1,16 @@
 <%- include('../partials/header') %>
 
-  <h1>edit grocery</h1>
-  <form action="/items/<%= idx %>?_method=PUT" method="POST" autocomplete="off">
-    <input type="text" name="item" value="<%= item.item %>">
-    <button type="submit">save grocery</button>
+<section class="show-page">
+  <form action="/groceries/update/<%= grocery._id %>?_method=PUT" method="POST" autocomplete="off">
+    <label for="grocery-edit">grocery:</label>
+    <textarea name="grocery" id="grocery-edit"><%= grocery.grocery %></textarea>
+    <label for="quantity-edit">quantity:</label>
+    <textarea name="quantity" id="quantity-edit"><%= grocery.quantity %></textarea>
+    <label for="notes-edit">notes:</label>
+    <textarea name="notes" id="notes-edit"><%= grocery.notes %></textarea>
+    <button type="submit">save changes</button> 
   </form>
+</section>
 
 <%- include('../partials/footer') %>
+

@@ -214,3 +214,7 @@ table td {
   border: none;
   border-radius: 8px;
 }
+
+pre {
+  white-space: pre-wrap; 
+}

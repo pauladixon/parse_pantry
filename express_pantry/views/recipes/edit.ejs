@@ -1,9 +1,24 @@
 <%- include('../partials/header') %>
 
-  <h6>edit item</h6>
-  <form action="/recipes/<%= idx %>?_method=PUT" method="POST" autocomplete="off">
-    <input type="text" name="recipe" value="<%= recipe.recipe %>">
-    <button type="submit">save recipe</button>
+  <form class="show-page" action="/recipes/update/<%= recipe._id %>?_method=PUT" method="POST" autocomplete="off">
+    <label for="recipe-edit">recipe:</label>
+    <textarea name="recipe" id="recipe-edit"><%= recipe.recipe %></textarea> 
+    <label for="author-edit">author:</label>
+    <textarea name="author" id="author-edit"><%= recipe.author %></textarea> 
+    <label for="source-edit">source:</label>
+    <textarea name="source" id="source-edit"><%= recipe.source %></textarea> 
+    <label for="servings-edit">servings:</label>
+    <textarea name="servings" id="servings-edit"><%= recipe.servings %></textarea> 
+    <label for="time-edit">time to make:</label>
+    <textarea name="time" id="time-edit"><%= recipe.time %></textarea> 
+    <label for="ingredients-edit">ingredients:</label>
+    <textarea type="text" name="ingredients" rows="20" cols="40" id="ingredients-edit"><%= recipe.ingredients %></textarea> 
+    <label for="directions-edit">directions:</label>
+    <textarea type="text" name="directions" rows="20" cols="40" id="directions-edit"><%= recipe.directions %></textarea> 
+    <button type="submit">save changes</button> 
+
+    <li> <a class="recipes-buttons" href="/recipes">back to all recipes</a></li>
+  <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a></li>
   </form>
 
 <%- include('../partials/footer') %>
