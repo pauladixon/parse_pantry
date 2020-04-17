@@ -1,20 +1,17 @@
 <%- include('../partials/header') %>
-<section class="show-page">
+<section id="recipe-index-page">
   <table class="lists" id="recipe">
     <thead>
       <tr>
-        <th></th>
         <th>recipes</th>
         <th>author</th>
         <th>time to make</th>
         <th>ingredients</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
       <% recipes.forEach((r) => { %>
         <tr>
-          <td></td>
           <td><a class="show-links" href="../recipes/<%= r._id %>"><%= r.recipe %></a></td>
           <td><%= r.author %></td>
           <td><%= r.time %></td>
@@ -23,7 +20,14 @@
       <% }); %>
     </tbody>
   </table>
-  <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a></li>
-    <li> <a class="recipes-buttons" href="/">back to dashboard</a></li>
+  <br>
+  <div class="dash-recipe">
+    <form class="new-form" action="../../" method="GET" autocomplete="off">
+      <input class="recipes-buttons" href="/" type="submit" value="back to dashboard">
+    </form>
+    <form class="new-form" action="../recipes/new" method="GET" autocomplete="off">
+      <input class="recipes-buttons" href="/recipes/new" type="submit" value="add new recipe">
+    </form>
+  </div>
 </section>
 <%- include('../partials/footer') %>

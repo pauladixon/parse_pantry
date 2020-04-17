@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form class="show-page" class="new-form" action="/recipes" method="POST">
+<form class="new-recipe" class="new-form" action="/recipes" method="POST">
     <label>recipe:</label>
     <input type="text" name="recipe">
     <label>author:</label>
@@ -12,13 +12,17 @@
     <label>time to make:</label>
     <input type="text" name="time"></input>
     <label>ingredients:</label>
-    <textarea type="text" name="ingredients" rows="20" cols="40"></textarea>
+    <textarea type="text" name="ingredients" rows="15" cols="40"></textarea>
     <label>directions:</label>
-    <textarea type="text" name="directions" rows="20" cols="40"></textarea>
-    <input class="recipes-buttons" type="submit" value="save recipe">
-    <br>
-    <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a></li>
-    <li> <a class="recipes-buttons" href="/">back to dashboard</a></li>
+    <textarea type="text" name="directions" rows="25" cols="40"></textarea>
+    <div>
+        <input class="recipes-buttons" type="submit" value="save recipe">
+    </div>
+    <div>
+        <form class="new-form" action="../../" method="GET" autocomplete="off">
+          <input class="recipes-buttons" href="/" type="submit" value="back to recipes">
+        </form>
+    </div>
 </form>
 
 <%- include('../partials/footer') %>

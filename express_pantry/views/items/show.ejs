@@ -7,10 +7,16 @@
     <div><%= item.quantity %></div>
     <div>date to eat by</div>
     <div><%= item.expires %></div>
-    <div><a href="/">go back</a></div>
-    <form method="GET" action="/items/<%= item._id %>/edit">
-      <button type="submit">edit</button>
-    </form>
+    <div class="dash-recipe">
+      <form class="new-form" action="../../" method="GET" autocomplete="off">
+        <input class="recipes-buttons" href="/" type="submit" value="back to dashboard">
+      </form>
+    </div>
+    <div>
+      <form class="new-form" action="/items/<%= item._id %>/edit" method="GET" autocomplete="off">
+        <input class="recipes-buttons" href="/items/edit" type="submit" value="edit item">
+      </form>
+    </div>
   </section>
 
 

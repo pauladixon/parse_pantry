@@ -1,16 +1,15 @@
 <%- include('../partials/header') %>
 
-<section class="show-page">
-  <form action="/groceries/update/<%= grocery._id %>?_method=PUT" method="POST" autocomplete="off">
-    <label for="grocery-edit">grocery:</label>
-    <textarea name="grocery" id="grocery-edit"><%= grocery.grocery %></textarea>
-    <label for="quantity-edit">quantity:</label>
-    <textarea name="quantity" id="quantity-edit"><%= grocery.quantity %></textarea>
-    <label for="notes-edit">notes:</label>
-    <textarea name="notes" id="notes-edit"><%= grocery.notes %></textarea>
-    <button type="submit">save changes</button> 
-  </form>
-</section>
+<form class="gro-edit-page" action="/groceries/update/<%= grocery._id %>?_method=PUT" method="POST" autocomplete="off">
+  <label for="grocery-edit">grocery:</label>
+  <textarea name="grocery" id="grocery-edit"><%= grocery.grocery %></textarea>
+  <label for="quantity-edit">quantity:</label>
+  <textarea name="quantity" id="quantity-edit"><%= grocery.quantity %></textarea>
+  <label for="notes-edit">notes:</label>
+  <textarea name="notes" id="notes-edit"><%= grocery.notes %></textarea>
+  <button class="recipes-buttons" type="submit">save changes</button> 
+</form>
+
 
 <%- include('../partials/footer') %>
 

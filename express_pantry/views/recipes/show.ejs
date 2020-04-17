@@ -15,15 +15,21 @@
   <div><pre><%= recipe.ingredients %></pre></div>
   <div>directions: </div>
   <div><pre><%= recipe.directions%></pre></div>
-  <form method="GET" action="/recipes/<%= recipe._id %>/edit">
-    <button type="submit">edit</button>
-  </form>
-  <form action="../recipes/<%= recipe._id %>?_method=DELETE"
-    id="delete-form" method="POST">
-    <button class="x" class="recipes-buttons" type="submit">delete this recipe</button></form>
-
-  <li> <a class="recipes-buttons" href="/recipes">back to all recipes</a></li>
-  <li> <a class="recipes-buttons" href="/recipes/new">add a new recipe</a></li>
+  <div>
+    <form class="new-form" action="../../" method="GET" autocomplete="off">
+      <input class="recipes-buttons" href="/" type="submit" value="back to dashboard">
+    </form>
+  </div>
+  <div>
+    <form class="new-form" action="/recipes/<%= recipe._id %>/edit" method="GET" autocomplete="off">
+      <input class="recipes-buttons" href="/recipes/edit" type="submit" value="edit recipe">
+    </form>
+  </div>
+  <div>
+    <form class="new-form" action="../recipes" method="GET" autocomplete="off">
+      <input class="recipes-buttons" href="/recipes" type="submit" value="see all recipes">
+    </form>
+  </div>
 </section>
 
 

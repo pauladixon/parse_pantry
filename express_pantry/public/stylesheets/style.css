@@ -1,5 +1,6 @@
 * {
   font-family: "Courier New", serif;
+  text-transform: lowercase;
 }
 
 main {
@@ -8,7 +9,9 @@ main {
   align-items: center;
 }
 
+
 .hero-image {
+  background-color: #f0f0f0;
   background-image: url(https://i.imgur.com/OmIvC1M.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -26,7 +29,7 @@ body {
 }
 
 nav {
-  margin: 10px 0px 140px 0px;
+  margin: 20px 0px 150px 0px;
   height: 65px;
   width: 100vw;
   display: grid;
@@ -50,8 +53,6 @@ nav {
 .title:hover:not(.active) {
   background-color: #5C22be;;
   color: #5C22be;;
-  font-family: Malina1;
-  font-size: 50px;
   -webkit-text-stroke: 2px #F0F0F0;
   border: solid #515E5E .25px;
 }
@@ -67,14 +68,8 @@ nav {
   color: #dbcdb2;
   float: right;
   padding: 10px;
-  margin: auto;
+  margin: 0px 60px;
   font-weight: bold;
-}
-
-.nav-right {
-  margin-top: 20px;
-  display: grid;
-  float: right;
 }
 
 .nav-links:hover:not(.active) {
@@ -96,18 +91,16 @@ ul .right {
 
 .new-form {
   display: grid;
-  grid-gap: 10px;
   grid-template-columns: repeat(1, minmax(auto));
 }
 
 .new-form * {
-  font-size: 10px;
-  color: white;
+  font-size: 11px;
+  color: whitesmoke;
   padding: 10px;
   border: none;
   border-radius: 10px;
 }
-
 
 .new-form input[type="submit"] {
   grid-column: span 2;
@@ -115,8 +108,13 @@ ul .right {
   height: 2rem;
   font-size: 10px;
   margin-left: auto;
-  color: 	green;
+  color: 	black;
   background-color: #f0f0f0;
+}
+
+.dash-recipe {
+  display: flex;
+  justify-content: space-between;
 }
 
 table {
@@ -137,21 +135,234 @@ table td {
 .tables {
   display: flex;
   justify-content: center;
+}
 
+.show-page:hover:not(.active) {
+  border: solid #515E5E .25px;
 }
 
 .show-page {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
-  background-color: #D2869F;
+  background-color: #470e17;
   font-size: 12px;
   color: #F0F0F0;
   padding: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 100px;
 }
 
-.show-page div:nth-child(even) {
+.show-page div:nth-child(odd) {
   font-weight: bold;
+}
+
+.edit-page:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
+.edit-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  background-color: #6c1b6b;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 100px;
+}
+
+.edit-page textarea {
+  color: 	black;
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.edit-page button {
+  color: 	black;
+  background-color: #f0f0f0;
+  width: 8rem;
+  height: 2rem;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.gro-show-page:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
+.gro-show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  background-color: #0f6587;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 100px;
+}
+
+.gro-show-page div:nth-child(odd) {
+  font-weight: bold;
+}
+
+.gro-edit-page:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
+.gro-edit-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  background-color: #2b6bd0;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 100px;
+}
+
+.gro-edit-page textarea {
+  color: 	black;
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.gro-edit-page button {
+  color: 	black;
+  background-color: #f0f0f0;
+  width: 8rem;
+  height: 2rem;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.edit-recipe-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  background-color: #1aa786;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 100px;
+}
+
+.edit-recipe-page:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
+.edit-recipe-page textarea {
+  color: 	black;
+  background-color: #f0f0f0;
+  font-size: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.edit-recipe-page button {
+  color: 	black;
+  background-color: #f0f0f0;
+  width: 8rem;
+  height: 2rem;
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.new-recipe {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  background-color: #bd9988;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 100px;
+}
+
+.new-recipe:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
+.new-recipe textarea {
+  color: 	black;
+  background-color: #f0f0f0;
+  font-size: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.new-recipe input {
+  color: 	black;
+  background-color: #f0f0f0;
+  font-size: 10px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+#recipe-index-page:hover:not(.active) {
+  border: solid #515E5E .25px;
+}
+
+#recipe-index-page {
+  display: grid;
+  grid-gap: 1rem;
+  /* background-color: #6c1b6b; */
+  /* background-color: #9a80c4; */
+  /* background-color: #99af98; */
+  background-color: #097057;
+  font-size: 12px;
+  color: #F0F0F0;
+  padding: 30px;
+  max-width: 750px;
+  opacity: 0.9;
+  margin-bottom: 100px;
+}
+
+#recipe-index-page a {
+  font-size: 14px;
+}
+
+#recipe-index-page th {
+  font-size: 15px;
+}
+
+table #recipe .lists {
+  border: white;
 }
 
 .pantry-list {
@@ -168,7 +379,6 @@ table td {
 }
 
 .grocery-list {
-  /* background-color: #9CDDDA; */
   background-color: #AA7E9C;
   /* background-color: #dbcdb2; */
   display: grid;
@@ -195,22 +405,22 @@ table td {
 
 .items-buttons {
   background-color: #f0f0f0;
-  color: #4e9f46;
+  color: black;
 }
 
 .groceries-buttons {
   background-color: #f0f0f0;
-  color: #4e9f46;
+  color: black;
 }
 
 .recipes-buttons {
   background-color: #f0f0f0;
-  color: #4e9f46;
+  color:  black;
 }
 
 .x {
   background-color: #f0f0f0;
-  color: #4e9f46;
+  color: black;
   border: none;
   border-radius: 8px;
 }

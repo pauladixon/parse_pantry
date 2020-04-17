@@ -7,7 +7,6 @@
         <th></th>
         <th>pantry item</th>
         <th>expires</th>
-        <th>notes</th>
         <th></th>
       </tr>
     </thead>
@@ -18,7 +17,6 @@
           <td><%= i.quantity %></td>
           <td><a class="show-links" href="/items/<%= i._id %>"><%= i.item %></a></td>
           <td><%= i.expires %></td>
-          <td><%= i.notes %> </td>
           <td>
             <form action="../items/<%= i._id %>?_method=DELETE"
             id="delete-form" method="POST">
@@ -39,9 +37,6 @@
     <label>expires:
       <input class="items-buttons" type="text" name="expires">
     </label><br>
-    <label>any notes:
-      <input class="items-buttons" type="text" name="notes">
-    </label>
     <input class="items-buttons" class="entry" type="submit" value="add pantry item">
   </form>
 </div>
@@ -82,7 +77,7 @@
     <label>quantity:
       <input class="groceries-buttons" type="text" name="quantity">
     </label><br>
-    <label>any notes:
+    <label>notes:
       <input class="groceries-buttons" type="text" name="notes">
     </label>
     <input class="groceries-buttons" class="entry" type="submit" value="add grocery item">
@@ -107,13 +102,14 @@
       <% }); %>
     </tbody>
   </table>
-
-  <form class="new-form" action="../recipes" method="POST" autocomplete="off">
-    <input class="recipes-buttons" href="/recipes" type="submit" value="see all recipes">
-  </form>
+<div class="dash-recipe">
   <form class="new-form" action="../recipes/new" method="GET" autocomplete="off">
     <input class="recipes-buttons" href="/recipes/new" type="submit" value="add new recipe">
   </form>
+  <form class="new-form" action="../recipes" method="POST" autocomplete="off">
+    <input class="recipes-buttons" href="/recipes" type="submit" value="see all recipes">
+  </form>
+</div>
 </div>
 
 <%- include('partials/footer') %>
