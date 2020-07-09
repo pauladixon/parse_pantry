@@ -436,6 +436,15 @@ table #recipe .lists {
   background-color: white;
 }
 
+.general-buttons {
+  margin-top: 30px;
+  background-color: #f0f0f0;
+  color:  black;
+}
+.general-buttons:hover:not(.active) {
+  background-color: white;
+}
+
 .recipes-buttons {
   margin-top: 30px;
   background-color: #f0f0f0;
@@ -471,4 +480,191 @@ pre {
 
 *:focus {
   outline: none;
+}
+
+footer {
+  margin-top: 80px;
+  padding-right: 30px;
+  width: 100vw;
+  text-align: right;
+  font-size: 12px;
+}
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+  nav {
+    height: 65px;
+    width: 100%;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 40px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  .nav {
+    margin-left: -75px;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 300px;
+    margin-left: 35px;
+    height: 100vh;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav {
+    margin: 20px 0px 130px 0px;
+    height: 65px;
+    width: 100vw;
+    display: grid;
+  }
+
+  .nav-group {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+  .nav-links {
+    padding: 10px;
+    margin: 0px 20px;
+  }
+
+  .new-form * {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .new-form input[type="submit"] {
+    grid-column: span 2;
+    width: 8rem;
+    height: 2rem;
+    font-size: 10px;
+    margin-left: auto;
+  }
+
+  .dash-recipe {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .show-page {
+    margin-top: -420px;
+    margin-bottom: 0px;
+    padding-left: 14px;
+    padding-bottom: 10px;
+  }
+
+  .edit-page {
+    margin-top: -420px;
+    margin-bottom: 0px;
+  }
+
+  .gro-show-page {
+    margin-top: -420px;
+    margin-bottom: 0px;
+    padding-left: 14px;
+    padding-bottom: 10px;
+  }
+
+  .gro-edit-page {
+    margin-top: -420px;
+    margin-bottom: 0px;
+  }
+
+  .edit-recipe-page {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    background-color: #1aa786;
+    font-size: 12px;
+    color: #F0F0F0;
+    padding: 30px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 600px;
+    opacity: 0.9;
+    margin-bottom: 100px;
+  }
+
+
+  .edit-recipe-page button {
+    padding: 10px;
+  }
+
+  .new-recipe {
+    padding: 30px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 600px;
+    margin-bottom: 100px;
+  }
+
+  #recipe-index-page {
+    padding: 30px;
+    max-width: 750px;
+    margin-bottom: 100px;
+  }
+
+  .pantry-list {
+    margin-top: 0px;
+  }
+
+  .grocery-list {
+    margin-top: 40px;
+  }
+
+  .recipe-list {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  .general-buttons {
+    margin-top: 10px;
+    margin-bottom: -20px;
+  }
+
+  .recipes-buttons {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .show-links {
+    color: white;
+    font-style: italic;
+    font-size: 11px;
+  }
+
+  footer {
+    margin-top: 100px;
+    margin-bottom: 0px;
+    padding-right: 0px;
+    width: 90vw;
+    text-align: right;
+    font-size: 12px;
+  }
+
 }
