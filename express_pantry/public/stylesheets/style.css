@@ -921,4 +921,8 @@ footer {
     font-size: 11px;
   }
 
+  footer {
+    font-size: 0px;
+  }
+
 }
