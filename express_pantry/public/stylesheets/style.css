@@ -534,10 +534,6 @@ footer {
     justify-content: center;
   }
 
-  .nav {
-    margin-left: -75px;
-  }
-
   main {
     display: flex;
     justify-content: center;
@@ -572,7 +568,8 @@ footer {
 
   .nav-links {
     padding: 10px;
-    margin: 10px 30px;
+    margin: 0px 300px 0px -25px;
+    width: 100px;
   }
 
   .new-form * {
