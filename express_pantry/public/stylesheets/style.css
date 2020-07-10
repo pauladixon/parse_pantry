@@ -539,7 +539,9 @@ footer {
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    width: 100%;
+    width: 300px;
+    margin-left: 35px;
+    margin-right: -35px;
     height: 100vh;
     margin-top: 150px;
   }
