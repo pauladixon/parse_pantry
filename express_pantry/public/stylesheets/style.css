@@ -509,11 +509,11 @@ footer {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
 
-  nav {
-    height: 65px;
-    width: 100%;
-  }
 
+  #outer-div {
+    width: 100vw;
+  }
+  
   .logo img {
     max-width: 320px;
     padding: 0px 0px 0px 10px;
@@ -539,8 +539,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
-    width: 300px;
-    margin-left: 35px;
+    width: 100%;
     height: 100vh;
     margin-top: 150px;
   }
@@ -556,8 +555,12 @@ footer {
   nav {
     margin: 20px 0px 130px 0px;
     height: 65px;
-    width: 100vw;
+    width: 100px;
     display: grid;
+  }
+
+  ul.nav {
+    width: 100px;
   }
 
   .nav-group {
@@ -568,7 +571,7 @@ footer {
 
   .nav-links {
     padding: 10px;
-    margin: 0px 300px 0px -25px;
+    margin: 0px 0px 0px 50px;
     width: 100px;
   }
 
@@ -659,7 +662,7 @@ footer {
 
   .recipe-list {
     margin-top: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   .general-buttons {
@@ -685,12 +688,7 @@ footer {
   }
 
   footer {
-    margin-top: 100px;
-    margin-bottom: 0px;
-    padding-right: 0px;
-    width: 90vw;
-    text-align: right;
-    font-size: 12px;
+    font-size: 0px;
   }
 
 }
