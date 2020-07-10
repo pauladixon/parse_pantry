@@ -1,31 +1,29 @@
 <%- include('../partials/header') %>
 
-<section class="show-page">
-  <div>recipe: </div>
-  <div><%= recipe.recipe %></div>
-  <div>author: </div>
-  <div><%= recipe.author %></div>
-  <div>source: </div>
-  <div><%= recipe.source %></div>
-  <div>servings: </div>
-  <div><%= recipe.servings %></div>
-  <div>time to make: </div>
-  <div><%= recipe.time %></div>
-  <div>ingredients: </div>
-  <div><pre><%= recipe.ingredients %></pre></div>
-  <div>directions: </div>
-  <div><pre><%= recipe.directions%></pre></div>
-  <div>
+<section class="recipe-show-page">
+  <div class="full-recipe">
+    <div>recipe: </div>
+    <div><%= recipe.recipe %></div>
+    <div>author: </div>
+    <div><%= recipe.author %></div>
+    <div>source: </div>
+    <div><%= recipe.source %></div>
+    <div>servings: </div>
+    <div><%= recipe.servings %></div>
+    <div>time to make: </div>
+    <div><%= recipe.time %></div>
+    <div>ingredients: </div>
+    <div><pre><%= recipe.ingredients %></pre></div>
+    <div>directions: </div>
+    <div><pre><%= recipe.directions%></pre></div>
+  </div>
+  <div class='button-group'>
     <form class="new-form" action="../../" method="GET" autocomplete="off">
       <input class="recipes-buttons" href="/" type="submit" value="back to dashboard">
     </form>
-  </div>
-  <div>
     <form class="new-form" action="/recipes/<%= recipe._id %>/edit" method="GET" autocomplete="off">
       <input class="recipes-buttons" href="/recipes/edit" type="submit" value="edit recipe">
     </form>
-  </div>
-  <div>
     <form class="new-form" action="../recipes" method="GET" autocomplete="off">
       <input class="recipes-buttons" href="/recipes" type="submit" value="see all recipes">
     </form>

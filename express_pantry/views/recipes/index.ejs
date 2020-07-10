@@ -1,33 +1,23 @@
 <%- include('../partials/header') %>
 <section id="recipe-index-page">
-  <table class="lists" id="recipe">
-    <thead>
-      <tr>
-        <th>recipes</th>
-        <th>author</th>
-        <th>time to make</th>
-        <th>ingredients</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="lists" id="recipes">
       <% recipes.forEach((r) => { %>
-        <tr>
-          <td><a class="show-links" href="../recipes/<%= r._id %>"><%= r.recipe %></a></td>
-          <td><%= r.author %></td>
-          <td><%= r.time %></td>
-          <td><pre><%= r.ingredients %></pre></td>
-        </tr>
+        <div id="recipe-card">
+          <div><a class="show-links" href="../recipes/<%= r._id %>"><%= r.recipe %></a></div>
+          <div class='line-item'><p class="label">author: </p><p class="name"><%= r.author %></p> <span class="dot">•</span><p class="label">time: </p><p class="name"><%= r.time %></p></div>
+          <div> <p class="label">ingredients: </p><pre><p class="ingredients"><%= r.ingredients %></p></pre></div>
+        </div>
       <% }); %>
-    </tbody>
-  </table>
-  <br>
-  <div class="dash-recipe">
-    <form class="new-form" action="../../" method="GET" autocomplete="off">
-      <input class="general-buttons" href="/" type="submit" value="back to dashboard">
-    </form>
-    <form class="new-form" action="../recipes/new" method="GET" autocomplete="off">
-      <input class="general-buttons" href="/recipes/new" type="submit" value="add new recipe">
-    </form>
+    </div>
+    <br>
+    <div class="dash-recipe">
+      <form class="new-form" action="../../" method="GET" autocomplete="off">
+        <input class="general-buttons" href="/" type="submit" value="back to dashboard">
+      </form>
+      <form class="new-form" action="../recipes/new" method="GET" autocomplete="off">
+        <input class="general-buttons" href="/recipes/new" type="submit" value="add new recipe">
+      </form>
+    </div>
   </div>
 </section>
 <%- include('../partials/footer') %>
