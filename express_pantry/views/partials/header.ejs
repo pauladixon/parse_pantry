@@ -14,15 +14,15 @@
 <div id="outer-div">
   <body class="hero-image">
     <nav>
-        <ul class='nav'>
-          <li><a href="/" class="title">pantry parser</a></li>
-          <div class="nav-right">
-            <% if (user) { %>
-              <a class="nav-links" href="/logout">log out</a>
-            <% } else { %>
-              <a class="nav-links" href="/auth/google">login with google</a>
-            <% } %>
-          </div>
-        </ul>
+      <a href="/" class="logo" alt-text='pantry parser'><img src='/logo.png' onmouseover="this.src='/logo-white.png';" onmouseout="this.src='/logo.png';" /></a>
+      <ul class='nav'>
+        <div class="nav-right">
+          <% if (user) { %>
+            <a class="nav-links" href="/logout">log out</a>
+          <% } else { %>
+            <a class="nav-links" href="/auth/google">login with google</a>
+          <% } %>
+        </div>
+      </ul>
     </nav>
     <main>
