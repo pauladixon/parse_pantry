@@ -633,9 +633,15 @@ footer {
     margin-bottom: 100px;
   }
 
+  .edit-page button {
+    height: 2.5rem;
+    border-radius: 8px;
+  }
+
 
   .edit-recipe-page button {
-    padding: 10px;
+    height: 2.5rem;
+    border-radius: 8px;
   }
 
   .new-recipe {
@@ -662,23 +668,17 @@ footer {
 
   .recipe-list {
     margin-top: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
   }
 
   .general-buttons {
-    width: 8rem;
-    height: 2rem;
-    font-size: 10px;
-    margin-top: 10px;
-    margin-bottom: -20px;
+    height: 2.5rem;
+    border-radius: 8px;
   }
 
   .recipes-buttons {
-    width: 8rem;
-    height: 2rem;
-    font-size: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    height: 2.5rem;
+    border-radius: 8px;
   }
 
   .show-links {
