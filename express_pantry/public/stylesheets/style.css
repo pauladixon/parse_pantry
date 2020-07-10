@@ -41,18 +41,20 @@ nav {
 }
 
 .logo img {
-  max-width: 450px;
+  max-width: 444px;
+  padding: 0px 0px 0px 10px;
 }
 
 .logo img:hover:not(.active)  {
   background-color: #5C22be;
   border: solid hsl(180, 7%, 34%) .25px;
-  max-width: 454px;
+  max-width: 453px;
+  margin: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 0px;
 }
 
 .logo {
   margin: 15px 0px 0px 40px;
-  padding: 0px 10px 10px 20px;
   max-width: 450px;
   height: 68px;
   position: fixed;
@@ -512,14 +514,24 @@ footer {
     width: 100%;
   }
 
-  .title {
+  .logo img {
+    max-width: 320px;
+    padding: 0px 0px 0px 10px;
+  }
+
+  .logo img:hover:not(.active)  {
+    max-width: 320px;
+    margin: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .logo {
+    margin: -500px 0px 0px 22px;
+    max-width: 320px;
+    position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100%;
-    font-size: 40px;
-    text-decoration: none;
-    margin-top: 10px;
+    justify-content: center;
   }
 
   .nav {
@@ -534,6 +546,7 @@ footer {
     width: 300px;
     margin-left: 35px;
     height: 100vh;
+    margin-top: 150px;
   }
 
   body {
@@ -559,7 +572,7 @@ footer {
 
   .nav-links {
     padding: 10px;
-    margin: 0px 20px;
+    margin: 10px 30px;
   }
 
   .new-form * {
@@ -582,26 +595,26 @@ footer {
   }
 
   .show-page {
-    margin-top: -420px;
+    margin-top: -525px;
     margin-bottom: 0px;
     padding-left: 14px;
     padding-bottom: 10px;
   }
 
   .edit-page {
-    margin-top: -420px;
+    margin-top: -525px;
     margin-bottom: 0px;
   }
 
   .gro-show-page {
-    margin-top: -420px;
+    margin-top: -525px;
     margin-bottom: 0px;
     padding-left: 14px;
     padding-bottom: 10px;
   }
 
   .gro-edit-page {
-    margin-top: -420px;
+    margin-top: -525px;
     margin-bottom: 0px;
   }
 
