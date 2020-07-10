@@ -752,7 +752,7 @@ footer {
     margin-bottom: 100px;
     padding: 30px;
     width: 275px;
-    margin-top: 2000px;
+    margin-top: 1800px;
   }
 
   #recipes {
@@ -923,6 +923,7 @@ footer {
   }
 
   footer {
+    height: 20px;
     font-size: 0px;
   }
 
