@@ -661,7 +661,7 @@ footer {
 
   .nav-links {
     padding: 10px;
-    margin: 0px 0px 0px 50px;
+    margin: 10px 0px 0px 50px;
     min-width: 80px;
     display: flex;
     justify-content: center;
@@ -756,7 +756,7 @@ footer {
     margin-bottom: 100px;
     padding: 30px;
     width: 275px;
-    margin-top: 2180px;
+    margin-top: 2280px;
   }
 
   #recipes {
