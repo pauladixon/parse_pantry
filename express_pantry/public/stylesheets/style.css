@@ -405,7 +405,6 @@ table td {
 .redirect-button {
   color: 	black;
   background-color: #f0f0f0;
-
   height: 2rem;
   font-size: 10px;
   border-radius: 10px;
@@ -789,7 +788,6 @@ footer {
     margin-bottom: 100px;
     padding: 30px;
     width: 275px;
-    margin-top: 2400px;
   }
 
   #recipes {
@@ -858,7 +856,6 @@ footer {
     max-width: 600px;
     opacity: 0.9;
     margin-bottom: 100px;
-    margin-top: 480px;
   }
 
   .full-recipe {
@@ -948,6 +945,10 @@ footer {
     margin-top: 30px;
     background-color: #f0f0f0;
     color:  black;
+  }
+
+  .redirect-button {
+    -webkit-appearance: none;
   }
 
   .save-button {
