@@ -658,7 +658,7 @@ footer {
   main {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-flow: row wrap;
     width: 300px;
     margin-left: 36px;
