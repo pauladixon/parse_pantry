@@ -6,8 +6,6 @@
 
 [View the App](https://parsepantry.herokuapp.com/#)
 
-check 
-
 ## Screenshots:
 
 ![Screenshot1](https://i.imgur.com/Eooz1Ez.png)
